@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@nx-demo-org/feature0": ["libs/feature0/src/index.ts"],
+      "@nx-demo-org/feature1": ["libs/feature1/src/index.ts"],
+      "@nx-demo-org/feature2": ["libs/feature2/src/index.ts"],
+      "@nx-demo-org/feature3": ["libs/feature3/src/index.ts"],
+      "@nx-demo-org/feature4": ["libs/feature4/src/index.ts"],
+      "@nx-demo-org/subfeature0": ["libs/subfeature0/src/index.ts"],
+      "@nx-demo-org/subfeature1": ["libs/subfeature1/src/index.ts"],
+      "@nx-demo-org/subfeature2": ["libs/subfeature2/src/index.ts"],
+      "@nx-demo-org/subfeature3": ["libs/subfeature3/src/index.ts"],
+      "@nx-demo-org/subfeature4": ["libs/subfeature4/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

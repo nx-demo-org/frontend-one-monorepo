@@ -1,0 +1,29 @@
+{
+  "name": "subfeature3",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/subfeature3/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/subfeature3/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/subfeature3/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/subfeature3/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

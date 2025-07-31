@@ -1,0 +1,29 @@
+{
+  "name": "feature4",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feature4/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/feature4/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/feature4/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/feature4/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
