@@ -3,7 +3,13 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^20.1.0",
-    "@angular/core": "^20.1.0"
+    "@angular/core": "^20.1.0",
+    "@nx-demo-org/example-javascript-library": "*",
+    "@nx-demo-org/subfeature0": "*",
+    "@nx-demo-org/subfeature1": "*",
+    "vite": "*",
+    "@analogjs/vite-plugin-angular": "*",
+    "@nx/vite": "*"
   },
   "sideEffects": false
 }

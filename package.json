@@ -2,7 +2,9 @@
   "name": "@nx-demo-org/frontend-one-monorepo",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "conformance-check": "npx nx-cloud conformance:check"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~20.1.0",
@@ -11,6 +13,7 @@
     "@angular/forms": "~20.1.0",
     "@angular/platform-browser": "~20.1.0",
     "@angular/router": "~20.1.0",
+    "@nx-demo-org/example-javascript-library": "^0.1.1",
     "rxjs": "~7.8.0",
     "zone.js": "~0.15.0"
   },
@@ -69,5 +72,6 @@
     "vite": "^6.0.0",
     "vitest": "^3.0.0",
     "webpack-merge": "^5.8.0"
-  }
+  },
+  "nx": {}
 }
