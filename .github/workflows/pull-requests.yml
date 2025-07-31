@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build
+      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build,conformance-check
       - run: npm ci --legacy-peer-deps
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
