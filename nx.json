@@ -83,6 +83,7 @@
       "style": "css"
     }
   },
+  "parallel": 1,
   "nxCloudId": "687e4cdd8a988930d293b779",
   "nxCloudUrl": "https://staging.nx.app"
 }

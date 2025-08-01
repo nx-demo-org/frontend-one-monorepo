@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test('app3 test 1', async ({ page }) => {
+test('app3 test 2', async ({ page }) => {
   await page.goto('/');
 
   // Expect h1 to contain a substring.
