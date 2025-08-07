@@ -16,6 +16,7 @@ describe('Feature0', () => {
   });
 
   it('should create', () => {
+    expect(true).toEqual(false);
     expect(component).toBeTruthy();
   });
 });
