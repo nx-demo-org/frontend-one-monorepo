@@ -8,4 +8,7 @@ import { CommonModule } from '@angular/common';
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Subfeature0 {}
+export class Subfeature0 {
+
+  private foobar: string = 'foobar'
+}
