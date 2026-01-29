@@ -8,7 +8,8 @@ console.log(examplePublishableLibrary());
 @Component({
   selector: 'lib-feature0',
   imports: [CommonModule, Subfeature0, Subfeature1],
-  template: `<p>Feature0 works!</p><lib-subfeature0></lib-subfeature0><lib-subfeature1></lib-subfeature1>`,
+  template: `<p>Feature0 works!</p>
+    <lib-subfeature0></lib-subfeature0><lib-subfeature1></lib-subfeature1>`,
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
