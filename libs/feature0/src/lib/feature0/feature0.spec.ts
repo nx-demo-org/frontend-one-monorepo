@@ -20,6 +20,6 @@ describe('Feature0', () => {
   });
 
   it('should have a title', () => {
-    expect(component.title).toBe('Feature1');
+    expect(component.title).toBe('Feature0');
   });
 });
