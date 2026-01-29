@@ -18,4 +18,8 @@ describe('Feature0', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have a title', () => {
+    expect(component.title).toBe('Feature1');
+  });
 });

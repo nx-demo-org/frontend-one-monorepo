@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { examplePublishableLibrary } from '@nx-demo-org/example-javascript-library';
-import {Subfeature0 } from '@nx-demo-org/subfeature0';
-import {Subfeature1 } from '@nx-demo-org/subfeature1';
+import { Subfeature0 } from '@nx-demo-org/subfeature0';
+import { Subfeature1 } from '@nx-demo-org/subfeature1';
 
 console.log(examplePublishableLibrary());
 @Component({
@@ -12,5 +12,14 @@ console.log(examplePublishableLibrary());
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Feature0 {
+export class Feature0 implements OnInit {
+  title: string;
+
+  constructor() {
+    this.title = 'Feature0';
+  }
+
+  ngOnInit(): void {
+    console.log(this.title);
+  }
 }
