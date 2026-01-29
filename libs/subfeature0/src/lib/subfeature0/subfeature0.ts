@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
   selector: 'lib-subfeature0',
   imports: [CommonModule],
-  template: `<p>Subfeature0 works!</p>`,
+  template: `<p>Subfeature0 works with an updated message!</p>`,
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

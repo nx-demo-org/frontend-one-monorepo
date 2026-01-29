@@ -22,14 +22,21 @@ jobs:
           filter: tree:0
           fetch-depth: 0
 
+      # Fetch base branch so Nx affected can diff against it (main may not exist in shallow/fork clones)
+      - run: git fetch origin ${{ github.base_ref }}
+
       # Cache node_modules
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
+
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v4
+
       - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build,conformance-check
       - run: npm ci --legacy-peer-deps
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
-      - run: npx nx run-many -t lint test build conformance-check
+      - run: npx nx affected -t lint test build conformance-check
