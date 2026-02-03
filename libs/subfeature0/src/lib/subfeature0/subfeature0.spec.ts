@@ -18,4 +18,8 @@ describe('Subfeature0', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have version initialized to 1.0.0', () => {
+    expect(component.version).toBe('1.0.1');
+  });
 });

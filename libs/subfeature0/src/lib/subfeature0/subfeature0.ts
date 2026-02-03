@@ -8,4 +8,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styles: ``,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class Subfeature0 {}
+export class Subfeature0 {
+  version = '1.0.0';
+}
