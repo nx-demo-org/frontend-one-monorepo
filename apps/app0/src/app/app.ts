@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcome } from './nx-welcome';
-import { examplePublishableLibrary } from '@nx-demo-org/example-javascript-library';
+import { examplePublishableLibrary, toTitleCase, slugify } from '@nx-demo-org/example-javascript-library';
 import { Feature0 } from '@nx-demo-org/feature0';
 import { Feature1} from '@nx-demo-org/feature1';
 @Component({
@@ -11,5 +11,6 @@ import { Feature1} from '@nx-demo-org/feature1';
   styles: ``,
 })
 export class App {
-  protected title = examplePublishableLibrary();
+  protected title = toTitleCase(examplePublishableLibrary());
+  protected slug = slugify(examplePublishableLibrary());
 }
