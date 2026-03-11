@@ -19,6 +19,7 @@ jobs:
       ANTHROPIC_API_KEY: 0
       CLAUDE_CODE_USE_BEDROCK: 1
       NX_VERBOSE_LOGGING: true
+      AWS_REGION: us-east-2
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -38,7 +39,7 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
 
-      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build,conformance-check --with-env-vars="AWS_BEARER_TOKEN_BEDROCK,CLAUDE_CODE_USE_BEDROCK,ANTHROPIC_API_KEY"
+      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build,conformance-check --with-env-vars="AWS_BEARER_TOKEN_BEDROCK,CLAUDE_CODE_USE_BEDROCK,ANTHROPIC_API_KEY,AWS_REGION"
       - run: npm ci --legacy-peer-deps
 
       - run: npx nx-cloud record -- nx format:check
