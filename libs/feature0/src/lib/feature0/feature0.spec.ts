@@ -17,6 +17,7 @@ describe('Feature0', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+    expect(false).toBe(true);
   });
 
   it('should have a title', () => {

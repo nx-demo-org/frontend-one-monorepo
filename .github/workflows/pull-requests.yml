@@ -14,10 +14,14 @@ jobs:
     name: Pull Request Validation
     environment: pull-requests
     env:
+      NX_FIX_CI_TRACING: true
+      ANTHROPIC_API_KEY: 0
       NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
       AWS_BEARER_TOKEN_BEDROCK: ${{ secrets.AWS_BEDROCK_TOKEN }}
-      ANTHROPIC_API_KEY: 0
       CLAUDE_CODE_USE_BEDROCK: 1
+      NX_VERBOSE_LOGGING: true
+      AWS_REGION: us-east-2
+      ANTHROPIC_LOG: debug
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,7 +41,7 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
 
-      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build,conformance-check --with-env-vars="AWS_BEARER_TOKEN_BEDROCK,CLAUDE_CODE_USE_BEDROCK,ANTHROPIC_API_KEY"
+      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build,conformance-check --with-env-vars="AWS_BEARER_TOKEN_BEDROCK,CLAUDE_CODE_USE_BEDROCK,ANTHROPIC_API_KEY,AWS_REGION"
       - run: npm ci --legacy-peer-deps
 
       - run: npx nx-cloud record -- nx format:check
