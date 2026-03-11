@@ -21,6 +21,7 @@ jobs:
       CLAUDE_CODE_USE_BEDROCK: 1
       NX_VERBOSE_LOGGING: true
       AWS_REGION: us-east-2
+      ANTHROPIC_LOG: debug
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
