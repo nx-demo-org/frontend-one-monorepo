@@ -15,6 +15,8 @@ jobs:
     environment: pull-requests
     env:
       NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
+      AWS_BEARER_TOKEN_BEDROCK: ${{ secrets.AWS_BEDROCK_TOKEN }}
+      CLAUDE_CODE_USE_BEDROCK: 1
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,7 +36,7 @@ jobs:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v4
 
-      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build,conformance-check
+      - run: npx nx start-ci-run --distribute-on=".nx/workflows/distribution-config.yaml" --stop-agents-after=lint,test,build,conformance-check --with-env-vars="AWS_BEARER_TOKEN_BEDROCK, CLAUDE_CODE_USE_BEDROCK"
       - run: npm ci --legacy-peer-deps
 
       - run: npx nx-cloud record -- nx format:check
