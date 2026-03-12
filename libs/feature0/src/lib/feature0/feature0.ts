@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { examplePublishableLibrary } from '@nx-demo-org/example-javascript-library';
+import { examplePublishableLibrary, toTitleCase, truncate } from '@nx-demo-org/example-javascript-library';
 import { Subfeature0 } from '@nx-demo-org/subfeature0';
 import { Subfeature1 } from '@nx-demo-org/subfeature1';
 
-console.log(examplePublishableLibrary());
+console.log(toTitleCase(examplePublishableLibrary()));
+console.log(truncate(examplePublishableLibrary(), 10));
 @Component({
   selector: 'lib-feature0',
   imports: [CommonModule, Subfeature0, Subfeature1],
